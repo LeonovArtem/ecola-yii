@@ -1,0 +1,164 @@
+.ruble {
+    font-family: 'PT Sans Ruble';
+    text-transform: lowercase;
+    color: #000;
+    font-weight: 700;
+}
+
+.panel-info > .panel-heading {
+    color: #ff7600;
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+}
+
+table {
+    font-size: 16px;
+
+}
+
+.table-bordered > thead > tr > th:last-child {
+    padding-left: 32px;
+}
+
+th:first-child, td:first-child {
+    text-align: center;
+}
+
+td:first-child, td:last-child {
+    /* background: #f5f5f5; */
+}
+
+.store-th {
+    width: 30%;
+    min-width: 200px;
+}
+
+.store-hidden {
+    cursor: pointer;
+    width: 100%;
+    min-width: 210px;
+}
+
+.store-hidden .all-store {
+    display: none;
+}
+
+.all-store:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.all-store > .row {
+    margin-right: 0;
+    margin-left: 0;
+
+}
+
+.circule {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    border-radius: 100%;
+    margin: 0 10px 0 0;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+
+}
+
+.store-Color-1 {
+    background-color: #FCE67B;
+}
+
+.store-Color-2 {
+    background-color: #dd6a0e;
+}
+
+.store-Color-3 {
+    background-color: #75c05d;
+}
+
+/*Order*/
+.order-nick hr {
+    background: url("../images/thread.png") repeat-x scroll 0 bottom rgba(0, 0, 0, 0);
+    font-size: 16px;
+    margin: 0 20px;
+    padding-bottom: 20px;
+}
+
+.number-order {
+    font-size: 20px;
+}
+
+/*Cart*/
+#blockbody {
+    width: 800px;
+    height: auto;
+    margin: 50px auto;
+}
+
+#block-content {
+    width: 600px;
+    height: auto;
+}
+
+.number {
+    max-width: 150px;
+    min-width: 120px;
+}
+
+.cart {
+    width: 100%;
+}
+
+.shopping_list {
+    width: 100%;
+}
+
+.all-sum {
+    float: right;
+    font-size: 18px;
+}
+
+.all-sum > div {
+    display: inline-block;
+}
+
+#all-sum-price {
+    font-weight: 600;
+}
+
+.in-cart > .btn {
+    min-width: 150px;
+    height: 40px;
+    font-size: 16px;
+}
+
+/*Cart_END*/
+
+/*bootsrap*/
+.well {
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    -webkit-box-shadow: inset 0 6px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 6px 1px rgba(0, 0, 0, .05);
+    margin-bottom: 0;
+}
+
+.panel-body {
+    font-size: 16px;
+}
+
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #fff;
+    background: #f5f5f5;
+}
+
+.alert {
+    font-size: 16px;
+}

@@ -19,6 +19,10 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <!-- Google Web Font Embed -->
+    <link
+        href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+        rel='stylesheet' type='text/css'>
     <?php $this->head() ?>
 </head>
 <body>
@@ -27,7 +31,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'Ecola',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -36,11 +40,11 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Главная', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+            ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
@@ -63,12 +67,69 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 </div>
-
 <footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <img src="img/live-lighter.png">
+                </div>
+                <div class="col-lg-6 col-md-6 text-right">
+                    <form action="#" id="mc-form" class="mc-form footer-newsletter fix" novalidate="true">
+                        <div class="subscribe-form">
+                            <input id="mc-email" type="email" name="EMAIL" placeholder="email рассылка...">
+                            <button id="mc-submit" type="submit">Подписаться</button>
+                        </div>
+                    </form>
+                    <div class="mailchimp-alerts text-centre fix pull-right">
+                        <div class="mailchimp-submitting"></div>
+                        <div class="mailchimp-success"></div>
+                        <div class="mailchimp-error"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 foo-company">
+                    Экола предлагает широкий ассортимент продукции
+                    для создания современного экономичного освещения:<br>
+                    энергосберегающие светодиодные лампы, светильники и прожекторы.<br>
+                    Изделия предназначены для использования в жилых домах и квартирах,
+                    офисных, производственных и других типах помещений, а также для подсветки
+                    архитектурных объектов различного назначения.
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <ul class="menu-list-white">
+                                <li><a href="" >Главная</a></li>
+                                <li><a href="">О фирме</a></li>
+                                <li><a href="">Контакты</a></li>
+                                <li><a href="">Где купить?</a></li>
+                                <li><a href="">Партнерам</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <ul class="menu-list-white text-right">
+                                <li><a href="">Каталог продукции</a></li>
+                                <li><a href="">Новости</a></li>
+                                <li><a href="">Статьи</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="text-center">&copy; Ecola <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+<!--            <p class="pull-right">--><?//= Yii::powered() ?><!--</p>-->
+        </div>
     </div>
 </footer>
 
@@ -76,3 +137,4 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+

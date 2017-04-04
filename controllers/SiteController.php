@@ -122,4 +122,13 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+    /**
+     * Displays test page.
+     *
+     * @return string
+     */
+    public function actionTest()
+    {
+        return $this->render('test');
+    }
 }
