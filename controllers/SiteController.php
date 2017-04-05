@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\MailForm;
 
 class SiteController extends Controller
 {
@@ -122,13 +123,16 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
     /**
      * Displays test page.
      *
      * @return string
      */
-    public function actionTest()
+    public function actionMail()
     {
-        return $this->render('test');
+        $model=new MailForm();
+//        $mail='aleonov@tepsvet.ru';
+        return $this->render('mail', compact('model'));
     }
 }

@@ -103,7 +103,7 @@ AppAsset::register($this);
                             <ul class="menu-list-white">
                                 <li><span class="glyphicon glyphicon-home"></span> <a href="/">Главная</a></li>
                                 <li><span class="glyphicon glyphicon-briefcase"></span> <a href="">О фирме</a></li>
-                                <li><span class="glyphicon glyphicon-phone-alt"></span> <a href="">Контакты</a></li>
+                                <li><span class="glyphicon glyphicon-phone-alt"></span> <a href="/site/mail">Контакты</a></li>
                                 <li><span class="glyphicon glyphicon-user"></span> <a href="/partners/">Партнерам</a></li>
                             </ul>
                         </div>
