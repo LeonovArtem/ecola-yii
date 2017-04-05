@@ -99,11 +99,20 @@ body {
 
 .menu-list-white li {
     padding-bottom: 5px;
+    font-size: 16px;
     font-weight: 600;
 }
-
+.menu-list-white li:hover{
+    color: #fce67b;
+    transition: all 0.2s ease 0s;
+}
 .menu-list-white a {
     color: #fff;
+}
+.menu-list-white a:hover {
+    text-decoration: none;
+    color: #fce67b;
+    transition: all 0.2s ease 0s;
 }
 
 .jumbotron {

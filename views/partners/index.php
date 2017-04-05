@@ -1,8 +1,9 @@
-<?php
-//$this->title='Партнерам';
-?>
 <?php $this->beginBlock('block1'); ?>
 <h1>Заголовок</h1>
+<?php $this->endBlock(); ?>
+
+<?php $this->beginBlock('slider'); ?>
+    <h3>Тут будет слайдер</h3>
 <?php $this->endBlock(); ?>
 
 

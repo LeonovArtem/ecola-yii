@@ -62,9 +62,10 @@ AppAsset::register($this);
 
     <div class="container">
 
-        <?php if (isset($this->blocks['block1'])) : ?>
-            <?= $this->blocks['blocks1']; ?>
-        <? endif; ?>
+
+        <?php if (isset($this->blocks['slider'])): ?>
+            <?= $this->blocks['slider']; ?>
+        <?php endif; ?>
 
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -100,18 +101,18 @@ AppAsset::register($this);
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <ul class="menu-list-white">
-                                <li><a href="">Главная</a></li>
-                                <li><a href="">О фирме</a></li>
-                                <li><a href="">Контакты</a></li>
-                                <li><a href="">Где купить?</a></li>
-                                <li><a href="">Партнерам</a></li>
+                                <li><span class="glyphicon glyphicon-home"></span> <a href="/">Главная</a></li>
+                                <li><span class="glyphicon glyphicon-briefcase"></span> <a href="">О фирме</a></li>
+                                <li><span class="glyphicon glyphicon-phone-alt"></span> <a href="">Контакты</a></li>
+                                <li><span class="glyphicon glyphicon-user"></span> <a href="/partners/">Партнерам</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <ul class="menu-list-white text-right">
-                                <li><a href="">Каталог продукции</a></li>
-                                <li><a href="">Новости</a></li>
-                                <li><a href="">Статьи</a></li>
+                                <li><span class="glyphicon glyphicon-map-marker"></span> <a href="">Где купить?</a></li>
+                                <li><span class="glyphicon glyphicon-comment"></span> <a href="">Новости</a></li>
+                                <li><span class="glyphicon glyphicon-shopping-cart"></span> <a href="">Каталог</a></li>
+                                <li><span class="glyphicon glyphicon-pencil"></span> <a href="">Статьи</a></li>
                             </ul>
                         </div>
                     </div>
