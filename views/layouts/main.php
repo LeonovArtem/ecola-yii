@@ -17,7 +17,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
+    <?//= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <!-- Google Web Font Embed -->
     <link
@@ -72,20 +72,10 @@ AppAsset::register($this);
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <img src="img/live-lighter.png">
+                    <img src="/img/live-lighter.png">
                 </div>
                 <div class="col-lg-6 col-md-6 text-right">
-                    <form action="#" id="mc-form" class="mc-form footer-newsletter fix" novalidate="true">
-                        <div class="subscribe-form">
-                            <input id="mc-email" type="email" name="EMAIL" placeholder="email рассылка...">
-                            <button id="mc-submit" type="submit">Подписаться</button>
-                        </div>
-                    </form>
-                    <div class="mailchimp-alerts text-centre fix pull-right">
-                        <div class="mailchimp-submitting"></div>
-                        <div class="mailchimp-success"></div>
-                        <div class="mailchimp-error"></div>
-                    </div>
+                    <!--Search-->
                 </div>
             </div>
         </div>
@@ -105,7 +95,7 @@ AppAsset::register($this);
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <ul class="menu-list-white">
-                                <li><a href="" >Главная</a></li>
+                                <li><a href="">Главная</a></li>
                                 <li><a href="">О фирме</a></li>
                                 <li><a href="">Контакты</a></li>
                                 <li><a href="">Где купить?</a></li>
@@ -128,7 +118,7 @@ AppAsset::register($this);
         <div class="container">
             <p class="text-center">&copy; Ecola <?= date('Y') ?></p>
 
-<!--            <p class="pull-right">--><?//= Yii::powered() ?><!--</p>-->
+            <!--            <p class="pull-right">--><? //= Yii::powered() ?><!--</p>-->
         </div>
     </div>
 </footer>
