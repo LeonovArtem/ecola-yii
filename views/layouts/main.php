@@ -17,7 +17,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?//= Html::csrfMetaTags() ?>
+    <? //= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <!-- Google Web Font Embed -->
     <link
@@ -61,6 +61,11 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
+
+        <?php if (isset($this->blocks['block1'])) : ?>
+            <?= $this->blocks['blocks1']; ?>
+        <? endif; ?>
+
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

@@ -1,6 +1,12 @@
 <?php
 //$this->title='Партнерам';
 ?>
+<?php $this->beginBlock('block1'); ?>
+<h1>Заголовок</h1>
+<?php $this->endBlock(); ?>
+
+
+
 <button class="btn btn-primary" id="btn">AJAX</button>
 <div id="ajax-text">Ajax Before</div>
 <?php if (!empty($goods)): ?>
