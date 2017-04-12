@@ -28,18 +28,29 @@ class PartnersController extends MainController
         return parent::beforeAction($action);
     }
 
-    public function actionIndex()
-    {
-        $this->view->title='Партнерам';
-        $this->view->registerMetaTag(['name'=>'keywords','content'=>'Ecola,магазин Ecola, экола']);
-        $this->view->registerMetaTag(['name'=>'description','content'=>'Интернет магазин для партнеров комапании Ecola']);
+//    public function actionIndex()
+//    {
+//        return $this->render('shop', compact('pages', 'goods'));
+//    }
+    public function actionIndex(){
+//        $this->view->title='Партнерам';
+//        $this->view->registerMetaTag(['name'=>'keywords','content'=>'Ecola,магазин Ecola, экола']);
+//        $this->view->registerMetaTag(['name'=>'description','content'=>'Интернет магазин для партнеров комапании Ecola']);
         $query = Partners::find()->select('ID, PARTNUM, NAME , int(PRICE) as PRICE');
         $pages = new Pagination(['totalCount' => $query->count(),
             'pageSize' => 20,
             'pageSizeParam' => false, 'forcePageParam' => false]);
         $goods = $query->offset($pages->offset)->limit($pages->limit)->all();
-        return $this->render('index', compact('pages', 'goods'));
-
+        return $this->render('shop', compact('pages', 'goods'));
+    }
+    public function actionNick(){
+        echo __METHOD__;
+    }
+    public function actionOrder(){
+        echo __METHOD__;
+    }
+    public function actionCart(){
+        echo __METHOD__;
     }
 
     public function actionSearch($name = '', $age = '')

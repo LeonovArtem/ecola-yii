@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\MailForm;
+use app\models\Catalogue;
 
 class SiteController extends Controller
 {
@@ -77,7 +78,10 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+//            return $this->goBack();
+            $name = 'Artem';
+//            return $this->render('catalogue',compact('name'));
+            return $this->redirect('partners/index');
         }
         return $this->render('login', [
             'model' => $model,
@@ -131,8 +135,29 @@ class SiteController extends Controller
      */
     public function actionMail()
     {
-        $model=new MailForm();
-//        $mail='aleonov@tepsvet.ru';
+        $model = new MailForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate()) {
+                debug($model);
+                Yii::$app->session->setFlash('success', 'Ваше сообщение успешно оправлено');
+                return $this->refresh();
+//                die;
+            } else {
+                Yii::$app->session->setFlash('error', 'Ошибка');
+            }
+        }
         return $this->render('mail', compact('model'));
+    }
+
+    public function actionCatalogue($id = '')
+    {
+        $query = Catalogue::find()->select('IDPAGE ,title');
+        $cataloge = $query->all();
+        return $this->render('catalogue', compact('cataloge'));
+    }
+
+    public function actionWhere()
+    {
+        return $this->render('where', compact('id'));
     }
 }

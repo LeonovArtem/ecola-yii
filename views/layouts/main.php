@@ -4,11 +4,11 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -41,8 +41,11 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'О фирме', 'url' => ['/site/about']],
+            ['label' => 'Каталог', 'url' => ['/site/catalogue']],
+            ['label' => 'Где купить', 'url' => ['/site/where']],
+            ['label' => 'Партнерам', 'url' => ['/partners/index']],
+            ['label' => 'Контакты', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
             ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -104,7 +107,7 @@ AppAsset::register($this);
                                 <li><span class="glyphicon glyphicon-home"></span> <a href="/">Главная</a></li>
                                 <li><span class="glyphicon glyphicon-briefcase"></span> <a href="">О фирме</a></li>
                                 <li><span class="glyphicon glyphicon-phone-alt"></span> <a href="/site/mail">Контакты</a></li>
-                                <li><span class="glyphicon glyphicon-user"></span> <a href="/partners/">Партнерам</a></li>
+                                <li><span class="glyphicon glyphicon-user"></span> <?= Html::a('Партнерам',Url::to(['partners/index']))?></li>
                             </ul>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
