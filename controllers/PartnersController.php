@@ -56,6 +56,9 @@ class PartnersController extends MainController
     public function actionSearch($name = '', $age = '')
     {
         if (\Yii::$app->request->isAjax) {
+            echo '<pre>';
+            print_r($_REQUEST);
+            echo '</pre>';
             $this->debug($_REQUEST);
 //            return $this->render('search', compact('name, age'));
         }

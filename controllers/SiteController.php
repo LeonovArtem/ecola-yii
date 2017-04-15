@@ -158,6 +158,10 @@ class SiteController extends Controller
 
     public function actionWhere()
     {
-        return $this->render('where', compact('id'));
+        $arr = [23, 41, 789];
+        for ($i = 0, $n = count($arr); $i < $n; $i++) {
+            setcookie("goods[$i]", $arr[$i], time() + 36000);
+        }
+        return $this->render('where', compact('arr'));
     }
 }
