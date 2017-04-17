@@ -7,14 +7,11 @@ use yii\debug\models\search\Debug;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use yii\data\Pagination;
-
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\MailForm;
 use app\models\Catalogue;
 use app\models\Where;
-
 
 class SiteController extends Controller
 {
@@ -163,12 +160,12 @@ class SiteController extends Controller
 
     public function actionWhere()
     {
-        $query = Where::find()->select('title, city, address, contact');
-        $pages = new Pagination(['totalCount' => $query->count(),
-            'pageSize' => 50,
-            'pageSizeParam' => false, 'forcePageParam' => false]);
-        $row = $query->offset($pages->offset)->limit($pages->limit)->all();
-        return $this->render('where', compact('row', 'pages'));
+//        $arr = [23, 41, 789];
+//        for ($i = 0, $n = count($arr); $i < $n; $i++) {
+//            setcookie("goods[$i]", $arr[$i], time() + 36000);
+//        }
+
+        return $this->render('where');
     }
 
     public function actionParse()
@@ -176,11 +173,11 @@ class SiteController extends Controller
         if (Yii::$app->request->isAjax) {
             $where = new Where();
             $row = Yii::$app->request->post('fields');
-            $where->title = $this->parse($row[0]);
-            $where->city = $this->parse($row[1]);
-            $where->address = $this->parse($row[2]);
-            $where->contact = $this->parse($row[3]);
-            $where->save();
+                $where->title = $this->parse($row[0]);
+                $where->city = $this->parse($row[1]);
+                $where->address = $this->parse($row[2]);
+                $where->contact = $this->parse($row[3]);
+                $where->save();
         }
 
     }
