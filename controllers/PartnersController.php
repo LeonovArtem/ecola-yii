@@ -32,7 +32,8 @@ class PartnersController extends MainController
 //    {
 //        return $this->render('shop', compact('pages', 'goods'));
 //    }
-    public function actionIndex(){
+    public function actionIndex()
+    {
 //        $this->view->title='Партнерам';
 //        $this->view->registerMetaTag(['name'=>'keywords','content'=>'Ecola,магазин Ecola, экола']);
 //        $this->view->registerMetaTag(['name'=>'description','content'=>'Интернет магазин для партнеров комапании Ecola']);
@@ -43,25 +44,31 @@ class PartnersController extends MainController
         $goods = $query->offset($pages->offset)->limit($pages->limit)->all();
         return $this->render('shop', compact('pages', 'goods'));
     }
-    public function actionNick(){
-        echo __METHOD__;
-    }
-    public function actionOrder(){
-        echo __METHOD__;
-    }
-    public function actionCart(){
+
+    public function actionNick()
+    {
         echo __METHOD__;
     }
 
-    public function actionSearch($name = '', $age = '')
+    public function actionOrder()
+    {
+        echo __METHOD__;
+    }
+
+    public function actionCart()
+    {
+        echo __METHOD__;
+    }
+
+    public function actionSearch()
     {
         if (\Yii::$app->request->isAjax) {
             echo '<pre>';
             print_r($_REQUEST);
             echo '</pre>';
-            $this->debug($_REQUEST);
-//            return $this->render('search', compact('name, age'));
+            
         }
+//        return $this->render('search', compact('name, age'));
     }
 
 } 

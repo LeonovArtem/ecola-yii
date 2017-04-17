@@ -1,33 +1,29 @@
+var $countRow = 0;
 $('#btn').on('click', function () {
     $('tbody tr').each(function () {
-        var row = [];
+        var row = {fields: []};
+
         $(this).find('td').each(function () {
-                var
-                    $site = $(this).find('a'),
-                    $href=$site.attr('href'),
-                    $td=$(this).html();
-                if ($href) {
-                    row.push({"href":$href,"title":$site.text()});
-                }
-                row.push({"fields":$td})
+                var $tdHtml = $(this).html();
+                row.fields.push($tdHtml);
             }
         );
-        // console.log(row);
         $.ajax({
-            url: '/partners/search',
+            url: '/parse',
             method: 'POST',
             data: row,
-            dataType: 'html',
             beforeSend: function () {
-
+                console.log($countRow);
             },
             success: function (res) {
-
-                $('#ajax-text').html(res);
+                // $('#ajax-text').append(res);
+                // console.log($countRow++);
             },
-            error: function () {
+            error: function (error) {
                 alert('Error!!!');
+                console.log(row);
             }
         });
+
     });
 });
